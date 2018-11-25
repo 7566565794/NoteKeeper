@@ -1,0 +1,5 @@
+
+zsquid:UselessImportCheck"ORemove this unused import 'android.support.design.widget.FloatingActionButton'.(„Ÿ¹¼8¨ß…Ëô,
+^squid:UselessImportCheck".Remove this unused import 'android.view.View'.(Ø½­äþÿÿÿÿ8¨ß…Ëô,
+msquid:UselessImportCheck"CRemove this unused import 'android.support.design.widget.Snackbar'.( À®p8¨ß…Ëô,
+qsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(Ê’åÃþÿÿÿÿ8¨ß…Ëô,
