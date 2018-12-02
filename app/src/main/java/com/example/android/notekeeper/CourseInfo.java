@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public final class CourseInfo {
+public final class CourseInfo implements Parcelable {
     private final String mCourseId;
     private final String mTitle;
     private final List<ModuleInfo> mModules;
@@ -16,6 +16,13 @@ public final class CourseInfo {
         mCourseId = courseId;
         mTitle = title;
         mModules = modules;
+    }
+
+    private CourseInfo(Parcel parcel) {
+        mCourseId = parcel.readString();
+        mTitle = parcel.readString();
+        mModules = new ArrayList<>();
+        parcel.readTypedList(mModules, ModuleInfo.CREATOR);
     }
 
     public String getCourseId() {
@@ -73,4 +80,29 @@ public final class CourseInfo {
         return mCourseId.hashCode();
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mCourseId);
+        parcel.writeString(mTitle);
+        parcel.writeList(mModules);
+    }
+
+    public static final Parcelable.Creator<CourseInfo> CREATOR =
+            new Parcelable.Creator<CourseInfo>() {
+
+                @Override
+                public CourseInfo createFromParcel(Parcel parcel) {
+                    return new CourseInfo(parcel);
+                }
+
+                @Override
+                public CourseInfo[] newArray(int i) {
+                    return new CourseInfo[i];
+                }
+            };
 }

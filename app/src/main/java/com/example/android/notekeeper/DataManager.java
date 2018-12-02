@@ -3,6 +3,8 @@ package com.example.android.notekeeper;
 import java.util.ArrayList;
 import java.util.List;
 
+/*This is a singleton class*/
+
 public class DataManager {
     private static DataManager ourInstance = null;
 
@@ -19,11 +21,11 @@ public class DataManager {
     }
 
     public String getCurrentUserName() {
-        return "Jim Wilson";
+        return "Madhan K";
     }
 
     public String getCurrentUserEmail() {
-        return "jimw@jwhh.com";
+        return "test123@mail.com";
     }
 
     public List<NoteInfo> getNotes() {
